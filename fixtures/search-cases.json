@@ -1,0 +1,2235 @@
+[
+  {
+    "name": "basic",
+    "userId": "11111111-2222-3333-4444-555555555555",
+    "total": 50,
+    "prefix": "lab-",
+    "length": 15,
+    "filters": {},
+    "matches": [
+      {
+        "salt": "lab-00000000000",
+        "buddy": {
+          "rarity": "common",
+          "species": "blob",
+          "eye": "·",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 66,
+            "PATIENCE": 9,
+            "CHAOS": 32,
+            "WISDOM": 1,
+            "SNARK": 42
+          },
+          "inspirationSeed": 894711606
+        }
+      },
+      {
+        "salt": "lab-00000000001",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "robot",
+          "eye": "◉",
+          "hat": "propeller",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 24,
+            "PATIENCE": 16,
+            "CHAOS": 19,
+            "WISDOM": 38,
+            "SNARK": 83
+          },
+          "inspirationSeed": 534348598
+        }
+      },
+      {
+        "salt": "lab-00000000002",
+        "buddy": {
+          "rarity": "common",
+          "species": "penguin",
+          "eye": "°",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 39,
+            "PATIENCE": 61,
+            "CHAOS": 29,
+            "WISDOM": 1,
+            "SNARK": 32
+          },
+          "inspirationSeed": 795336242
+        }
+      },
+      {
+        "salt": "lab-00000000003",
+        "buddy": {
+          "rarity": "common",
+          "species": "capybara",
+          "eye": "·",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 1,
+            "PATIENCE": 25,
+            "CHAOS": 64,
+            "WISDOM": 25,
+            "SNARK": 34
+          },
+          "inspirationSeed": 331511299
+        }
+      },
+      {
+        "salt": "lab-00000000004",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "robot",
+          "eye": "◉",
+          "hat": "wizard",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 73,
+            "PATIENCE": 16,
+            "CHAOS": 48,
+            "WISDOM": 26,
+            "SNARK": 47
+          },
+          "inspirationSeed": 837014694
+        }
+      },
+      {
+        "salt": "lab-00000000005",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "blob",
+          "eye": "✦",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 42,
+            "PATIENCE": 27,
+            "CHAOS": 74,
+            "WISDOM": 11,
+            "SNARK": 43
+          },
+          "inspirationSeed": 993549912
+        }
+      },
+      {
+        "salt": "lab-00000000006",
+        "buddy": {
+          "rarity": "rare",
+          "species": "goose",
+          "eye": "✦",
+          "hat": "tophat",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 80,
+            "PATIENCE": 53,
+            "CHAOS": 31,
+            "WISDOM": 59,
+            "SNARK": 24
+          },
+          "inspirationSeed": 435235772
+        }
+      },
+      {
+        "salt": "lab-00000000007",
+        "buddy": {
+          "rarity": "common",
+          "species": "chonk",
+          "eye": "@",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 39,
+            "PATIENCE": 1,
+            "CHAOS": 57,
+            "WISDOM": 16,
+            "SNARK": 16
+          },
+          "inspirationSeed": 925540123
+        }
+      },
+      {
+        "salt": "lab-00000000008",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "turtle",
+          "eye": "◉",
+          "hat": "propeller",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 43,
+            "PATIENCE": 87,
+            "CHAOS": 28,
+            "WISDOM": 51,
+            "SNARK": 13
+          },
+          "inspirationSeed": 648312886
+        }
+      },
+      {
+        "salt": "lab-00000000009",
+        "buddy": {
+          "rarity": "common",
+          "species": "rabbit",
+          "eye": "·",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 41,
+            "PATIENCE": 29,
+            "CHAOS": 75,
+            "WISDOM": 23,
+            "SNARK": 1
+          },
+          "inspirationSeed": 667280134
+        }
+      },
+      {
+        "salt": "lab-00000000010",
+        "buddy": {
+          "rarity": "common",
+          "species": "robot",
+          "eye": "@",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 7,
+            "PATIENCE": 33,
+            "CHAOS": 34,
+            "WISDOM": 35,
+            "SNARK": 84
+          },
+          "inspirationSeed": 280964547
+        }
+      },
+      {
+        "salt": "lab-00000000011",
+        "buddy": {
+          "rarity": "common",
+          "species": "duck",
+          "eye": "×",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 81,
+            "PATIENCE": 43,
+            "CHAOS": 1,
+            "WISDOM": 41,
+            "SNARK": 34
+          },
+          "inspirationSeed": 473461540
+        }
+      },
+      {
+        "salt": "lab-00000000012",
+        "buddy": {
+          "rarity": "common",
+          "species": "mushroom",
+          "eye": "◉",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 37,
+            "PATIENCE": 14,
+            "CHAOS": 29,
+            "WISDOM": 61,
+            "SNARK": 1
+          },
+          "inspirationSeed": 599147355
+        }
+      },
+      {
+        "salt": "lab-00000000013",
+        "buddy": {
+          "rarity": "common",
+          "species": "dragon",
+          "eye": "·",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 21,
+            "PATIENCE": 24,
+            "CHAOS": 79,
+            "WISDOM": 28,
+            "SNARK": 1
+          },
+          "inspirationSeed": 493664993
+        }
+      },
+      {
+        "salt": "lab-00000000014",
+        "buddy": {
+          "rarity": "common",
+          "species": "goose",
+          "eye": "°",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 27,
+            "PATIENCE": 8,
+            "CHAOS": 58,
+            "WISDOM": 33,
+            "SNARK": 28
+          },
+          "inspirationSeed": 525067966
+        }
+      },
+      {
+        "salt": "lab-00000000015",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "rabbit",
+          "eye": "×",
+          "hat": "wizard",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 29,
+            "PATIENCE": 42,
+            "CHAOS": 23,
+            "WISDOM": 8,
+            "SNARK": 78
+          },
+          "inspirationSeed": 650628165
+        }
+      },
+      {
+        "salt": "lab-00000000016",
+        "buddy": {
+          "rarity": "common",
+          "species": "rabbit",
+          "eye": "°",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 83,
+            "PATIENCE": 9,
+            "CHAOS": 9,
+            "WISDOM": 29,
+            "SNARK": 24
+          },
+          "inspirationSeed": 159681013
+        }
+      },
+      {
+        "salt": "lab-00000000017",
+        "buddy": {
+          "rarity": "common",
+          "species": "octopus",
+          "eye": "@",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 11,
+            "PATIENCE": 31,
+            "CHAOS": 5,
+            "WISDOM": 32,
+            "SNARK": 70
+          },
+          "inspirationSeed": 830177208
+        }
+      },
+      {
+        "salt": "lab-00000000018",
+        "buddy": {
+          "rarity": "common",
+          "species": "octopus",
+          "eye": "·",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 72,
+            "PATIENCE": 26,
+            "CHAOS": 4,
+            "WISDOM": 38,
+            "SNARK": 15
+          },
+          "inspirationSeed": 591844649
+        }
+      },
+      {
+        "salt": "lab-00000000019",
+        "buddy": {
+          "rarity": "common",
+          "species": "duck",
+          "eye": "✦",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 25,
+            "PATIENCE": 6,
+            "CHAOS": 79,
+            "WISDOM": 21,
+            "SNARK": 1
+          },
+          "inspirationSeed": 222184929
+        }
+      }
+    ]
+  },
+  {
+    "name": "species-owl",
+    "userId": "11111111-2222-3333-4444-555555555555",
+    "total": 2000,
+    "prefix": "lab-",
+    "length": 15,
+    "filters": {
+      "species": "owl"
+    },
+    "matches": [
+      {
+        "salt": "lab-00000000038",
+        "buddy": {
+          "rarity": "common",
+          "species": "owl",
+          "eye": "·",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 22,
+            "PATIENCE": 60,
+            "CHAOS": 1,
+            "WISDOM": 5,
+            "SNARK": 27
+          },
+          "inspirationSeed": 737277732
+        }
+      },
+      {
+        "salt": "lab-00000000084",
+        "buddy": {
+          "rarity": "common",
+          "species": "owl",
+          "eye": "×",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 13,
+            "PATIENCE": 31,
+            "CHAOS": 21,
+            "WISDOM": 7,
+            "SNARK": 66
+          },
+          "inspirationSeed": 352541573
+        }
+      },
+      {
+        "salt": "lab-00000000097",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "owl",
+          "eye": "◉",
+          "hat": "beanie",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 46,
+            "PATIENCE": 18,
+            "CHAOS": 52,
+            "WISDOM": 70,
+            "SNARK": 14
+          },
+          "inspirationSeed": 439276444
+        }
+      },
+      {
+        "salt": "lab-00000000099",
+        "buddy": {
+          "rarity": "common",
+          "species": "owl",
+          "eye": "◉",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 6,
+            "PATIENCE": 62,
+            "CHAOS": 24,
+            "WISDOM": 12,
+            "SNARK": 27
+          },
+          "inspirationSeed": 676689721
+        }
+      },
+      {
+        "salt": "lab-00000000106",
+        "buddy": {
+          "rarity": "common",
+          "species": "owl",
+          "eye": "✦",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 9,
+            "PATIENCE": 12,
+            "CHAOS": 14,
+            "WISDOM": 75,
+            "SNARK": 15
+          },
+          "inspirationSeed": 181693470
+        }
+      },
+      {
+        "salt": "lab-00000000117",
+        "buddy": {
+          "rarity": "common",
+          "species": "owl",
+          "eye": "✦",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 1,
+            "PATIENCE": 80,
+            "CHAOS": 32,
+            "WISDOM": 11,
+            "SNARK": 24
+          },
+          "inspirationSeed": 757821343
+        }
+      },
+      {
+        "salt": "lab-00000000165",
+        "buddy": {
+          "rarity": "common",
+          "species": "owl",
+          "eye": "°",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 7,
+            "PATIENCE": 19,
+            "CHAOS": 7,
+            "WISDOM": 3,
+            "SNARK": 74
+          },
+          "inspirationSeed": 547370650
+        }
+      },
+      {
+        "salt": "lab-00000000185",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "owl",
+          "eye": "°",
+          "hat": "wizard",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 92,
+            "PATIENCE": 35,
+            "CHAOS": 19,
+            "WISDOM": 38,
+            "SNARK": 49
+          },
+          "inspirationSeed": 136236022
+        }
+      },
+      {
+        "salt": "lab-00000000191",
+        "buddy": {
+          "rarity": "common",
+          "species": "owl",
+          "eye": "°",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 1,
+            "PATIENCE": 30,
+            "CHAOS": 34,
+            "WISDOM": 76,
+            "SNARK": 21
+          },
+          "inspirationSeed": 758375861
+        }
+      },
+      {
+        "salt": "lab-00000000232",
+        "buddy": {
+          "rarity": "common",
+          "species": "owl",
+          "eye": "×",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 1,
+            "PATIENCE": 42,
+            "CHAOS": 37,
+            "WISDOM": 55,
+            "SNARK": 24
+          },
+          "inspirationSeed": 753091924
+        }
+      },
+      {
+        "salt": "lab-00000000252",
+        "buddy": {
+          "rarity": "common",
+          "species": "owl",
+          "eye": "×",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 21,
+            "PATIENCE": 11,
+            "CHAOS": 59,
+            "WISDOM": 1,
+            "SNARK": 16
+          },
+          "inspirationSeed": 525896531
+        }
+      },
+      {
+        "salt": "lab-00000000297",
+        "buddy": {
+          "rarity": "common",
+          "species": "owl",
+          "eye": "@",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 6,
+            "PATIENCE": 29,
+            "CHAOS": 22,
+            "WISDOM": 1,
+            "SNARK": 60
+          },
+          "inspirationSeed": 617882094
+        }
+      },
+      {
+        "salt": "lab-00000000315",
+        "buddy": {
+          "rarity": "common",
+          "species": "owl",
+          "eye": "@",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 6,
+            "PATIENCE": 12,
+            "CHAOS": 78,
+            "WISDOM": 43,
+            "SNARK": 8
+          },
+          "inspirationSeed": 811766427
+        }
+      },
+      {
+        "salt": "lab-00000000328",
+        "buddy": {
+          "rarity": "common",
+          "species": "owl",
+          "eye": "@",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 22,
+            "PATIENCE": 41,
+            "CHAOS": 4,
+            "WISDOM": 28,
+            "SNARK": 79
+          },
+          "inspirationSeed": 416122397
+        }
+      },
+      {
+        "salt": "lab-00000000378",
+        "buddy": {
+          "rarity": "rare",
+          "species": "owl",
+          "eye": "◉",
+          "hat": "tinyduck",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 47,
+            "PATIENCE": 43,
+            "CHAOS": 86,
+            "WISDOM": 29,
+            "SNARK": 24
+          },
+          "inspirationSeed": 292272242
+        }
+      },
+      {
+        "salt": "lab-00000000383",
+        "buddy": {
+          "rarity": "common",
+          "species": "owl",
+          "eye": "·",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 3,
+            "PATIENCE": 14,
+            "CHAOS": 59,
+            "WISDOM": 43,
+            "SNARK": 20
+          },
+          "inspirationSeed": 965800524
+        }
+      },
+      {
+        "salt": "lab-00000000399",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "owl",
+          "eye": "×",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 82,
+            "PATIENCE": 19,
+            "CHAOS": 53,
+            "WISDOM": 40,
+            "SNARK": 19
+          },
+          "inspirationSeed": 576192718
+        }
+      },
+      {
+        "salt": "lab-00000000435",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "owl",
+          "eye": "✦",
+          "hat": "beanie",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 51,
+            "PATIENCE": 48,
+            "CHAOS": 14,
+            "WISDOM": 39,
+            "SNARK": 90
+          },
+          "inspirationSeed": 857320784
+        }
+      },
+      {
+        "salt": "lab-00000000446",
+        "buddy": {
+          "rarity": "rare",
+          "species": "owl",
+          "eye": "·",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 43,
+            "PATIENCE": 95,
+            "CHAOS": 32,
+            "WISDOM": 61,
+            "SNARK": 28
+          },
+          "inspirationSeed": 988133257
+        }
+      },
+      {
+        "salt": "lab-00000000456",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "owl",
+          "eye": "°",
+          "hat": "wizard",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 47,
+            "PATIENCE": 5,
+            "CHAOS": 46,
+            "WISDOM": 18,
+            "SNARK": 74
+          },
+          "inspirationSeed": 431459024
+        }
+      }
+    ]
+  },
+  {
+    "name": "rarity-rare",
+    "userId": "11111111-2222-3333-4444-555555555555",
+    "total": 2000,
+    "prefix": "lab-",
+    "length": 15,
+    "filters": {
+      "rarity": "rare"
+    },
+    "matches": [
+      {
+        "salt": "lab-00000000006",
+        "buddy": {
+          "rarity": "rare",
+          "species": "goose",
+          "eye": "✦",
+          "hat": "tophat",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 80,
+            "PATIENCE": 53,
+            "CHAOS": 31,
+            "WISDOM": 59,
+            "SNARK": 24
+          },
+          "inspirationSeed": 435235772
+        }
+      },
+      {
+        "salt": "lab-00000000021",
+        "buddy": {
+          "rarity": "rare",
+          "species": "dragon",
+          "eye": "°",
+          "hat": "crown",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 28,
+            "PATIENCE": 15,
+            "CHAOS": 85,
+            "WISDOM": 32,
+            "SNARK": 55
+          },
+          "inspirationSeed": 858030723
+        }
+      },
+      {
+        "salt": "lab-00000000022",
+        "buddy": {
+          "rarity": "rare",
+          "species": "cat",
+          "eye": "×",
+          "hat": "halo",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 27,
+            "PATIENCE": 42,
+            "CHAOS": 80,
+            "WISDOM": 58,
+            "SNARK": 18
+          },
+          "inspirationSeed": 906103083
+        }
+      },
+      {
+        "salt": "lab-00000000030",
+        "buddy": {
+          "rarity": "rare",
+          "species": "blob",
+          "eye": "°",
+          "hat": "beanie",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 19,
+            "PATIENCE": 41,
+            "CHAOS": 46,
+            "WISDOM": 44,
+            "SNARK": 96
+          },
+          "inspirationSeed": 657564300
+        }
+      },
+      {
+        "salt": "lab-00000000037",
+        "buddy": {
+          "rarity": "rare",
+          "species": "dragon",
+          "eye": "·",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 26,
+            "PATIENCE": 45,
+            "CHAOS": 37,
+            "WISDOM": 24,
+            "SNARK": 80
+          },
+          "inspirationSeed": 94759448
+        }
+      },
+      {
+        "salt": "lab-00000000047",
+        "buddy": {
+          "rarity": "rare",
+          "species": "cat",
+          "eye": "✦",
+          "hat": "beanie",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 21,
+            "PATIENCE": 26,
+            "CHAOS": 80,
+            "WISDOM": 49,
+            "SNARK": 28
+          },
+          "inspirationSeed": 349337153
+        }
+      },
+      {
+        "salt": "lab-00000000068",
+        "buddy": {
+          "rarity": "rare",
+          "species": "duck",
+          "eye": "·",
+          "hat": "beanie",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 82,
+            "PATIENCE": 29,
+            "CHAOS": 42,
+            "WISDOM": 23,
+            "SNARK": 64
+          },
+          "inspirationSeed": 955689410
+        }
+      },
+      {
+        "salt": "lab-00000000071",
+        "buddy": {
+          "rarity": "rare",
+          "species": "blob",
+          "eye": "·",
+          "hat": "crown",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 46,
+            "PATIENCE": 27,
+            "CHAOS": 97,
+            "WISDOM": 25,
+            "SNARK": 62
+          },
+          "inspirationSeed": 73966435
+        }
+      },
+      {
+        "salt": "lab-00000000072",
+        "buddy": {
+          "rarity": "rare",
+          "species": "cactus",
+          "eye": "°",
+          "hat": "halo",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 20,
+            "PATIENCE": 45,
+            "CHAOS": 100,
+            "WISDOM": 33,
+            "SNARK": 57
+          },
+          "inspirationSeed": 44079510
+        }
+      },
+      {
+        "salt": "lab-00000000080",
+        "buddy": {
+          "rarity": "rare",
+          "species": "rabbit",
+          "eye": "°",
+          "hat": "crown",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 36,
+            "PATIENCE": 17,
+            "CHAOS": 60,
+            "WISDOM": 40,
+            "SNARK": 100
+          },
+          "inspirationSeed": 59313650
+        }
+      },
+      {
+        "salt": "lab-00000000101",
+        "buddy": {
+          "rarity": "rare",
+          "species": "ghost",
+          "eye": "@",
+          "hat": "tophat",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 37,
+            "PATIENCE": 97,
+            "CHAOS": 33,
+            "WISDOM": 34,
+            "SNARK": 17
+          },
+          "inspirationSeed": 602100160
+        }
+      },
+      {
+        "salt": "lab-00000000118",
+        "buddy": {
+          "rarity": "rare",
+          "species": "cat",
+          "eye": "·",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 89,
+            "PATIENCE": 31,
+            "CHAOS": 26,
+            "WISDOM": 44,
+            "SNARK": 38
+          },
+          "inspirationSeed": 151674245
+        }
+      },
+      {
+        "salt": "lab-00000000136",
+        "buddy": {
+          "rarity": "rare",
+          "species": "penguin",
+          "eye": "×",
+          "hat": "crown",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 54,
+            "PATIENCE": 25,
+            "CHAOS": 59,
+            "WISDOM": 83,
+            "SNARK": 25
+          },
+          "inspirationSeed": 360718695
+        }
+      },
+      {
+        "salt": "lab-00000000138",
+        "buddy": {
+          "rarity": "rare",
+          "species": "ghost",
+          "eye": "×",
+          "hat": "wizard",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 23,
+            "PATIENCE": 49,
+            "CHAOS": 51,
+            "WISDOM": 43,
+            "SNARK": 100
+          },
+          "inspirationSeed": 521903728
+        }
+      },
+      {
+        "salt": "lab-00000000141",
+        "buddy": {
+          "rarity": "rare",
+          "species": "snail",
+          "eye": "✦",
+          "hat": "tinyduck",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 30,
+            "PATIENCE": 50,
+            "CHAOS": 41,
+            "WISDOM": 90,
+            "SNARK": 21
+          },
+          "inspirationSeed": 535676078
+        }
+      },
+      {
+        "salt": "lab-00000000156",
+        "buddy": {
+          "rarity": "rare",
+          "species": "snail",
+          "eye": "✦",
+          "hat": "propeller",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 61,
+            "PATIENCE": 45,
+            "CHAOS": 19,
+            "WISDOM": 54,
+            "SNARK": 79
+          },
+          "inspirationSeed": 622794565
+        }
+      },
+      {
+        "salt": "lab-00000000163",
+        "buddy": {
+          "rarity": "rare",
+          "species": "duck",
+          "eye": "@",
+          "hat": "tinyduck",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 37,
+            "PATIENCE": 36,
+            "CHAOS": 26,
+            "WISDOM": 93,
+            "SNARK": 36
+          },
+          "inspirationSeed": 456256434
+        }
+      },
+      {
+        "salt": "lab-00000000178",
+        "buddy": {
+          "rarity": "rare",
+          "species": "chonk",
+          "eye": "@",
+          "hat": "tophat",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 62,
+            "PATIENCE": 100,
+            "CHAOS": 37,
+            "WISDOM": 21,
+            "SNARK": 44
+          },
+          "inspirationSeed": 626107519
+        }
+      },
+      {
+        "salt": "lab-00000000181",
+        "buddy": {
+          "rarity": "rare",
+          "species": "rabbit",
+          "eye": "°",
+          "hat": "wizard",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 50,
+            "PATIENCE": 81,
+            "CHAOS": 53,
+            "WISDOM": 16,
+            "SNARK": 34
+          },
+          "inspirationSeed": 68927152
+        }
+      },
+      {
+        "salt": "lab-00000000209",
+        "buddy": {
+          "rarity": "rare",
+          "species": "robot",
+          "eye": "✦",
+          "hat": "halo",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 28,
+            "PATIENCE": 29,
+            "CHAOS": 22,
+            "WISDOM": 50,
+            "SNARK": 81
+          },
+          "inspirationSeed": 347046994
+        }
+      }
+    ]
+  },
+  {
+    "name": "hat-wizard",
+    "userId": "11111111-2222-3333-4444-555555555555",
+    "total": 5000,
+    "prefix": "lab-",
+    "length": 15,
+    "filters": {
+      "hat": "wizard"
+    },
+    "matches": [
+      {
+        "salt": "lab-00000000004",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "robot",
+          "eye": "◉",
+          "hat": "wizard",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 73,
+            "PATIENCE": 16,
+            "CHAOS": 48,
+            "WISDOM": 26,
+            "SNARK": 47
+          },
+          "inspirationSeed": 837014694
+        }
+      },
+      {
+        "salt": "lab-00000000015",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "rabbit",
+          "eye": "×",
+          "hat": "wizard",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 29,
+            "PATIENCE": 42,
+            "CHAOS": 23,
+            "WISDOM": 8,
+            "SNARK": 78
+          },
+          "inspirationSeed": 650628165
+        }
+      },
+      {
+        "salt": "lab-00000000114",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "ghost",
+          "eye": "°",
+          "hat": "wizard",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 88,
+            "PATIENCE": 16,
+            "CHAOS": 49,
+            "WISDOM": 33,
+            "SNARK": 17
+          },
+          "inspirationSeed": 837448904
+        }
+      },
+      {
+        "salt": "lab-00000000132",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "chonk",
+          "eye": "×",
+          "hat": "wizard",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 37,
+            "PATIENCE": 38,
+            "CHAOS": 94,
+            "WISDOM": 10,
+            "SNARK": 18
+          },
+          "inspirationSeed": 906097252
+        }
+      },
+      {
+        "salt": "lab-00000000138",
+        "buddy": {
+          "rarity": "rare",
+          "species": "ghost",
+          "eye": "×",
+          "hat": "wizard",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 23,
+            "PATIENCE": 49,
+            "CHAOS": 51,
+            "WISDOM": 43,
+            "SNARK": 100
+          },
+          "inspirationSeed": 521903728
+        }
+      },
+      {
+        "salt": "lab-00000000144",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "axolotl",
+          "eye": "@",
+          "hat": "wizard",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 17,
+            "PATIENCE": 39,
+            "CHAOS": 13,
+            "WISDOM": 43,
+            "SNARK": 92
+          },
+          "inspirationSeed": 590546634
+        }
+      },
+      {
+        "salt": "lab-00000000181",
+        "buddy": {
+          "rarity": "rare",
+          "species": "rabbit",
+          "eye": "°",
+          "hat": "wizard",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 50,
+            "PATIENCE": 81,
+            "CHAOS": 53,
+            "WISDOM": 16,
+            "SNARK": 34
+          },
+          "inspirationSeed": 68927152
+        }
+      },
+      {
+        "salt": "lab-00000000185",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "owl",
+          "eye": "°",
+          "hat": "wizard",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 92,
+            "PATIENCE": 35,
+            "CHAOS": 19,
+            "WISDOM": 38,
+            "SNARK": 49
+          },
+          "inspirationSeed": 136236022
+        }
+      },
+      {
+        "salt": "lab-00000000271",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "robot",
+          "eye": "·",
+          "hat": "wizard",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 68,
+            "PATIENCE": 23,
+            "CHAOS": 49,
+            "WISDOM": 6,
+            "SNARK": 37
+          },
+          "inspirationSeed": 22604791
+        }
+      },
+      {
+        "salt": "lab-00000000284",
+        "buddy": {
+          "rarity": "rare",
+          "species": "chonk",
+          "eye": "✦",
+          "hat": "wizard",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 33,
+            "PATIENCE": 38,
+            "CHAOS": 33,
+            "WISDOM": 15,
+            "SNARK": 77
+          },
+          "inspirationSeed": 258285321
+        }
+      },
+      {
+        "salt": "lab-00000000309",
+        "buddy": {
+          "rarity": "rare",
+          "species": "cactus",
+          "eye": "✦",
+          "hat": "wizard",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 59,
+            "PATIENCE": 86,
+            "CHAOS": 24,
+            "WISDOM": 25,
+            "SNARK": 59
+          },
+          "inspirationSeed": 683573830
+        }
+      },
+      {
+        "salt": "lab-00000000317",
+        "buddy": {
+          "rarity": "rare",
+          "species": "axolotl",
+          "eye": "°",
+          "hat": "wizard",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 77,
+            "PATIENCE": 34,
+            "CHAOS": 63,
+            "WISDOM": 31,
+            "SNARK": 27
+          },
+          "inspirationSeed": 158956480
+        }
+      },
+      {
+        "salt": "lab-00000000361",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "octopus",
+          "eye": "·",
+          "hat": "wizard",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 26,
+            "PATIENCE": 94,
+            "CHAOS": 9,
+            "WISDOM": 54,
+            "SNARK": 19
+          },
+          "inspirationSeed": 86464731
+        }
+      },
+      {
+        "salt": "lab-00000000379",
+        "buddy": {
+          "rarity": "rare",
+          "species": "capybara",
+          "eye": "◉",
+          "hat": "wizard",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 47,
+            "PATIENCE": 21,
+            "CHAOS": 78,
+            "WISDOM": 35,
+            "SNARK": 38
+          },
+          "inspirationSeed": 925341761
+        }
+      },
+      {
+        "salt": "lab-00000000433",
+        "buddy": {
+          "rarity": "rare",
+          "species": "capybara",
+          "eye": "@",
+          "hat": "wizard",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 81,
+            "PATIENCE": 52,
+            "CHAOS": 49,
+            "WISDOM": 43,
+            "SNARK": 21
+          },
+          "inspirationSeed": 914347644
+        }
+      },
+      {
+        "salt": "lab-00000000442",
+        "buddy": {
+          "rarity": "rare",
+          "species": "dragon",
+          "eye": "·",
+          "hat": "wizard",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 41,
+            "PATIENCE": 47,
+            "CHAOS": 75,
+            "WISDOM": 31,
+            "SNARK": 19
+          },
+          "inspirationSeed": 345384375
+        }
+      },
+      {
+        "salt": "lab-00000000456",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "owl",
+          "eye": "°",
+          "hat": "wizard",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 47,
+            "PATIENCE": 5,
+            "CHAOS": 46,
+            "WISDOM": 18,
+            "SNARK": 74
+          },
+          "inspirationSeed": 431459024
+        }
+      },
+      {
+        "salt": "lab-00000000482",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "duck",
+          "eye": "◉",
+          "hat": "wizard",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 89,
+            "PATIENCE": 17,
+            "CHAOS": 17,
+            "WISDOM": 36,
+            "SNARK": 19
+          },
+          "inspirationSeed": 646290067
+        }
+      },
+      {
+        "salt": "lab-00000000525",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "owl",
+          "eye": "✦",
+          "hat": "wizard",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 36,
+            "PATIENCE": 12,
+            "CHAOS": 46,
+            "WISDOM": 89,
+            "SNARK": 47
+          },
+          "inspirationSeed": 120633629
+        }
+      },
+      {
+        "salt": "lab-00000000561",
+        "buddy": {
+          "rarity": "epic",
+          "species": "octopus",
+          "eye": "×",
+          "hat": "wizard",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 41,
+            "PATIENCE": 30,
+            "CHAOS": 71,
+            "WISDOM": 95,
+            "SNARK": 47
+          },
+          "inspirationSeed": 888920842
+        }
+      }
+    ]
+  },
+  {
+    "name": "min-chaos-80",
+    "userId": "11111111-2222-3333-4444-555555555555",
+    "total": 5000,
+    "prefix": "lab-",
+    "length": 15,
+    "filters": {
+      "minStat": {
+        "name": "CHAOS",
+        "threshold": 80
+      }
+    },
+    "matches": [
+      {
+        "salt": "lab-00000000021",
+        "buddy": {
+          "rarity": "rare",
+          "species": "dragon",
+          "eye": "°",
+          "hat": "crown",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 28,
+            "PATIENCE": 15,
+            "CHAOS": 85,
+            "WISDOM": 32,
+            "SNARK": 55
+          },
+          "inspirationSeed": 858030723
+        }
+      },
+      {
+        "salt": "lab-00000000022",
+        "buddy": {
+          "rarity": "rare",
+          "species": "cat",
+          "eye": "×",
+          "hat": "halo",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 27,
+            "PATIENCE": 42,
+            "CHAOS": 80,
+            "WISDOM": 58,
+            "SNARK": 18
+          },
+          "inspirationSeed": 906103083
+        }
+      },
+      {
+        "salt": "lab-00000000041",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "rabbit",
+          "eye": "◉",
+          "hat": "propeller",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 29,
+            "PATIENCE": 18,
+            "CHAOS": 91,
+            "WISDOM": 46,
+            "SNARK": 39
+          },
+          "inspirationSeed": 838825406
+        }
+      },
+      {
+        "salt": "lab-00000000045",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "ghost",
+          "eye": "×",
+          "hat": "tinyduck",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 10,
+            "PATIENCE": 44,
+            "CHAOS": 85,
+            "WISDOM": 50,
+            "SNARK": 48
+          },
+          "inspirationSeed": 450558881
+        }
+      },
+      {
+        "salt": "lab-00000000047",
+        "buddy": {
+          "rarity": "rare",
+          "species": "cat",
+          "eye": "✦",
+          "hat": "beanie",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 21,
+            "PATIENCE": 26,
+            "CHAOS": 80,
+            "WISDOM": 49,
+            "SNARK": 28
+          },
+          "inspirationSeed": 349337153
+        }
+      },
+      {
+        "salt": "lab-00000000071",
+        "buddy": {
+          "rarity": "rare",
+          "species": "blob",
+          "eye": "·",
+          "hat": "crown",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 46,
+            "PATIENCE": 27,
+            "CHAOS": 97,
+            "WISDOM": 25,
+            "SNARK": 62
+          },
+          "inspirationSeed": 73966435
+        }
+      },
+      {
+        "salt": "lab-00000000072",
+        "buddy": {
+          "rarity": "rare",
+          "species": "cactus",
+          "eye": "°",
+          "hat": "halo",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 20,
+            "PATIENCE": 45,
+            "CHAOS": 100,
+            "WISDOM": 33,
+            "SNARK": 57
+          },
+          "inspirationSeed": 44079510
+        }
+      },
+      {
+        "salt": "lab-00000000073",
+        "buddy": {
+          "rarity": "common",
+          "species": "cat",
+          "eye": "·",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 2,
+            "PATIENCE": 13,
+            "CHAOS": 80,
+            "WISDOM": 39,
+            "SNARK": 38
+          },
+          "inspirationSeed": 474396041
+        }
+      },
+      {
+        "salt": "lab-00000000076",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "goose",
+          "eye": "◉",
+          "hat": "tophat",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 19,
+            "PATIENCE": 34,
+            "CHAOS": 81,
+            "WISDOM": 35,
+            "SNARK": 33
+          },
+          "inspirationSeed": 503790874
+        }
+      },
+      {
+        "salt": "lab-00000000088",
+        "buddy": {
+          "rarity": "common",
+          "species": "dragon",
+          "eye": "·",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 27,
+            "PATIENCE": 6,
+            "CHAOS": 81,
+            "WISDOM": 32,
+            "SNARK": 42
+          },
+          "inspirationSeed": 572362936
+        }
+      },
+      {
+        "salt": "lab-00000000110",
+        "buddy": {
+          "rarity": "common",
+          "species": "cat",
+          "eye": "@",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 41,
+            "PATIENCE": 4,
+            "CHAOS": 80,
+            "WISDOM": 9,
+            "SNARK": 34
+          },
+          "inspirationSeed": 544138065
+        }
+      },
+      {
+        "salt": "lab-00000000132",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "chonk",
+          "eye": "×",
+          "hat": "wizard",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 37,
+            "PATIENCE": 38,
+            "CHAOS": 94,
+            "WISDOM": 10,
+            "SNARK": 18
+          },
+          "inspirationSeed": 906097252
+        }
+      },
+      {
+        "salt": "lab-00000000184",
+        "buddy": {
+          "rarity": "legendary",
+          "species": "chonk",
+          "eye": "°",
+          "hat": "propeller",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 100,
+            "PATIENCE": 85,
+            "CHAOS": 83,
+            "WISDOM": 63,
+            "SNARK": 48
+          },
+          "inspirationSeed": 867686994
+        }
+      },
+      {
+        "salt": "lab-00000000197",
+        "buddy": {
+          "rarity": "common",
+          "species": "duck",
+          "eye": "@",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 44,
+            "PATIENCE": 34,
+            "CHAOS": 80,
+            "WISDOM": 13,
+            "SNARK": 1
+          },
+          "inspirationSeed": 225952674
+        }
+      },
+      {
+        "salt": "lab-00000000200",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "capybara",
+          "eye": "@",
+          "hat": "tinyduck",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 39,
+            "PATIENCE": 7,
+            "CHAOS": 90,
+            "WISDOM": 17,
+            "SNARK": 31
+          },
+          "inspirationSeed": 587111752
+        }
+      },
+      {
+        "salt": "lab-00000000229",
+        "buddy": {
+          "rarity": "rare",
+          "species": "chonk",
+          "eye": "°",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 39,
+            "PATIENCE": 45,
+            "CHAOS": 99,
+            "WISDOM": 21,
+            "SNARK": 35
+          },
+          "inspirationSeed": 679575715
+        }
+      },
+      {
+        "salt": "lab-00000000242",
+        "buddy": {
+          "rarity": "common",
+          "species": "cactus",
+          "eye": "✦",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 1,
+            "PATIENCE": 28,
+            "CHAOS": 82,
+            "WISDOM": 15,
+            "SNARK": 7
+          },
+          "inspirationSeed": 69521618
+        }
+      },
+      {
+        "salt": "lab-00000000259",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "rabbit",
+          "eye": "°",
+          "hat": "beanie",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 22,
+            "PATIENCE": 11,
+            "CHAOS": 92,
+            "WISDOM": 23,
+            "SNARK": 34
+          },
+          "inspirationSeed": 640865091
+        }
+      },
+      {
+        "salt": "lab-00000000269",
+        "buddy": {
+          "rarity": "rare",
+          "species": "capybara",
+          "eye": "×",
+          "hat": "crown",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 49,
+            "PATIENCE": 20,
+            "CHAOS": 84,
+            "WISDOM": 41,
+            "SNARK": 60
+          },
+          "inspirationSeed": 958595782
+        }
+      },
+      {
+        "salt": "lab-00000000270",
+        "buddy": {
+          "rarity": "common",
+          "species": "mushroom",
+          "eye": "✦",
+          "hat": "none",
+          "shiny": false,
+          "stats": {
+            "DEBUGGING": 31,
+            "PATIENCE": 27,
+            "CHAOS": 82,
+            "WISDOM": 35,
+            "SNARK": 7
+          },
+          "inspirationSeed": 249544356
+        }
+      }
+    ]
+  },
+  {
+    "name": "shiny",
+    "userId": "11111111-2222-3333-4444-555555555555",
+    "total": 500000,
+    "prefix": "lab-",
+    "length": 15,
+    "filters": {
+      "shiny": true
+    },
+    "matches": [
+      {
+        "salt": "lab-00000000180",
+        "buddy": {
+          "rarity": "common",
+          "species": "chonk",
+          "eye": "°",
+          "hat": "none",
+          "shiny": true,
+          "stats": {
+            "DEBUGGING": 59,
+            "PATIENCE": 9,
+            "CHAOS": 39,
+            "WISDOM": 22,
+            "SNARK": 5
+          },
+          "inspirationSeed": 17580639
+        }
+      },
+      {
+        "salt": "lab-00000000244",
+        "buddy": {
+          "rarity": "rare",
+          "species": "cactus",
+          "eye": "@",
+          "hat": "tophat",
+          "shiny": true,
+          "stats": {
+            "DEBUGGING": 31,
+            "PATIENCE": 86,
+            "CHAOS": 46,
+            "WISDOM": 44,
+            "SNARK": 28
+          },
+          "inspirationSeed": 636066621
+        }
+      },
+      {
+        "salt": "lab-00000000392",
+        "buddy": {
+          "rarity": "common",
+          "species": "blob",
+          "eye": "✦",
+          "hat": "none",
+          "shiny": true,
+          "stats": {
+            "DEBUGGING": 64,
+            "PATIENCE": 8,
+            "CHAOS": 3,
+            "WISDOM": 33,
+            "SNARK": 35
+          },
+          "inspirationSeed": 36510787
+        }
+      },
+      {
+        "salt": "lab-00000000539",
+        "buddy": {
+          "rarity": "common",
+          "species": "cactus",
+          "eye": "@",
+          "hat": "none",
+          "shiny": true,
+          "stats": {
+            "DEBUGGING": 8,
+            "PATIENCE": 58,
+            "CHAOS": 21,
+            "WISDOM": 14,
+            "SNARK": 23
+          },
+          "inspirationSeed": 97868594
+        }
+      },
+      {
+        "salt": "lab-00000000542",
+        "buddy": {
+          "rarity": "common",
+          "species": "goose",
+          "eye": "✦",
+          "hat": "none",
+          "shiny": true,
+          "stats": {
+            "DEBUGGING": 20,
+            "PATIENCE": 59,
+            "CHAOS": 26,
+            "WISDOM": 1,
+            "SNARK": 18
+          },
+          "inspirationSeed": 715191776
+        }
+      },
+      {
+        "salt": "lab-00000000652",
+        "buddy": {
+          "rarity": "common",
+          "species": "mushroom",
+          "eye": "◉",
+          "hat": "none",
+          "shiny": true,
+          "stats": {
+            "DEBUGGING": 1,
+            "PATIENCE": 43,
+            "CHAOS": 26,
+            "WISDOM": 17,
+            "SNARK": 82
+          },
+          "inspirationSeed": 2713711
+        }
+      },
+      {
+        "salt": "lab-00000000985",
+        "buddy": {
+          "rarity": "common",
+          "species": "octopus",
+          "eye": "×",
+          "hat": "none",
+          "shiny": true,
+          "stats": {
+            "DEBUGGING": 35,
+            "PATIENCE": 63,
+            "CHAOS": 31,
+            "WISDOM": 7,
+            "SNARK": 18
+          },
+          "inspirationSeed": 291632024
+        }
+      },
+      {
+        "salt": "lab-00000001068",
+        "buddy": {
+          "rarity": "common",
+          "species": "octopus",
+          "eye": "✦",
+          "hat": "none",
+          "shiny": true,
+          "stats": {
+            "DEBUGGING": 27,
+            "PATIENCE": 9,
+            "CHAOS": 14,
+            "WISDOM": 69,
+            "SNARK": 37
+          },
+          "inspirationSeed": 765162689
+        }
+      },
+      {
+        "salt": "lab-00000001111",
+        "buddy": {
+          "rarity": "common",
+          "species": "penguin",
+          "eye": "×",
+          "hat": "none",
+          "shiny": true,
+          "stats": {
+            "DEBUGGING": 1,
+            "PATIENCE": 44,
+            "CHAOS": 25,
+            "WISDOM": 66,
+            "SNARK": 35
+          },
+          "inspirationSeed": 28869437
+        }
+      },
+      {
+        "salt": "lab-00000001155",
+        "buddy": {
+          "rarity": "common",
+          "species": "cactus",
+          "eye": "◉",
+          "hat": "none",
+          "shiny": true,
+          "stats": {
+            "DEBUGGING": 17,
+            "PATIENCE": 1,
+            "CHAOS": 13,
+            "WISDOM": 21,
+            "SNARK": 78
+          },
+          "inspirationSeed": 693535861
+        }
+      },
+      {
+        "salt": "lab-00000001174",
+        "buddy": {
+          "rarity": "common",
+          "species": "axolotl",
+          "eye": "·",
+          "hat": "none",
+          "shiny": true,
+          "stats": {
+            "DEBUGGING": 12,
+            "PATIENCE": 16,
+            "CHAOS": 23,
+            "WISDOM": 2,
+            "SNARK": 63
+          },
+          "inspirationSeed": 612078682
+        }
+      },
+      {
+        "salt": "lab-00000001215",
+        "buddy": {
+          "rarity": "common",
+          "species": "blob",
+          "eye": "✦",
+          "hat": "none",
+          "shiny": true,
+          "stats": {
+            "DEBUGGING": 9,
+            "PATIENCE": 65,
+            "CHAOS": 1,
+            "WISDOM": 25,
+            "SNARK": 17
+          },
+          "inspirationSeed": 469402158
+        }
+      },
+      {
+        "salt": "lab-00000001718",
+        "buddy": {
+          "rarity": "common",
+          "species": "cactus",
+          "eye": "·",
+          "hat": "none",
+          "shiny": true,
+          "stats": {
+            "DEBUGGING": 7,
+            "PATIENCE": 84,
+            "CHAOS": 6,
+            "WISDOM": 19,
+            "SNARK": 28
+          },
+          "inspirationSeed": 103129377
+        }
+      },
+      {
+        "salt": "lab-00000001725",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "snail",
+          "eye": "°",
+          "hat": "wizard",
+          "shiny": true,
+          "stats": {
+            "DEBUGGING": 31,
+            "PATIENCE": 50,
+            "CHAOS": 18,
+            "WISDOM": 68,
+            "SNARK": 52
+          },
+          "inspirationSeed": 34907574
+        }
+      },
+      {
+        "salt": "lab-00000001985",
+        "buddy": {
+          "rarity": "common",
+          "species": "robot",
+          "eye": "×",
+          "hat": "none",
+          "shiny": true,
+          "stats": {
+            "DEBUGGING": 13,
+            "PATIENCE": 75,
+            "CHAOS": 1,
+            "WISDOM": 26,
+            "SNARK": 42
+          },
+          "inspirationSeed": 483885440
+        }
+      },
+      {
+        "salt": "lab-00000002267",
+        "buddy": {
+          "rarity": "common",
+          "species": "snail",
+          "eye": "°",
+          "hat": "none",
+          "shiny": true,
+          "stats": {
+            "DEBUGGING": 9,
+            "PATIENCE": 65,
+            "CHAOS": 44,
+            "WISDOM": 5,
+            "SNARK": 37
+          },
+          "inspirationSeed": 336464920
+        }
+      },
+      {
+        "salt": "lab-00000002290",
+        "buddy": {
+          "rarity": "uncommon",
+          "species": "penguin",
+          "eye": "×",
+          "hat": "tinyduck",
+          "shiny": true,
+          "stats": {
+            "DEBUGGING": 8,
+            "PATIENCE": 18,
+            "CHAOS": 20,
+            "WISDOM": 49,
+            "SNARK": 67
+          },
+          "inspirationSeed": 576703179
+        }
+      },
+      {
+        "salt": "lab-00000002304",
+        "buddy": {
+          "rarity": "rare",
+          "species": "duck",
+          "eye": "✦",
+          "hat": "propeller",
+          "shiny": true,
+          "stats": {
+            "DEBUGGING": 44,
+            "PATIENCE": 24,
+            "CHAOS": 51,
+            "WISDOM": 77,
+            "SNARK": 40
+          },
+          "inspirationSeed": 283881237
+        }
+      },
+      {
+        "salt": "lab-00000002311",
+        "buddy": {
+          "rarity": "common",
+          "species": "rabbit",
+          "eye": "◉",
+          "hat": "none",
+          "shiny": true,
+          "stats": {
+            "DEBUGGING": 62,
+            "PATIENCE": 15,
+            "CHAOS": 7,
+            "WISDOM": 8,
+            "SNARK": 30
+          },
+          "inspirationSeed": 43536779
+        }
+      },
+      {
+        "salt": "lab-00000002316",
+        "buddy": {
+          "rarity": "common",
+          "species": "owl",
+          "eye": "@",
+          "hat": "none",
+          "shiny": true,
+          "stats": {
+            "DEBUGGING": 15,
+            "PATIENCE": 8,
+            "CHAOS": 17,
+            "WISDOM": 62,
+            "SNARK": 22
+          },
+          "inspirationSeed": 95764968
+        }
+      }
+    ]
+  }
+]

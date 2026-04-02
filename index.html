@@ -1,0 +1,1525 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Claude Buddy Changer</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%232057d4'/%3E%3Cpath d='M18 18h28v28H18z' fill='none' stroke='%23fffdf9' stroke-width='4'/%3E%3Cpath d='M24 24h16v16H24z' fill='%23fffdf9'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f2ea;
+      --surface: rgba(255, 251, 245, 0.9);
+      --text: #1d2430;
+      --text-soft: #5d6676;
+      --line: rgba(29, 36, 48, 0.12);
+      --line-strong: rgba(29, 36, 48, 0.24);
+      --brand: #2057d4;
+      --brand-strong: #163c96;
+      --accent-soft: rgba(249, 115, 22, 0.16);
+      --rare: #9c5d05;
+      --rare-soft: rgba(156, 93, 5, 0.14);
+      --shadow: 0 28px 80px rgba(35, 43, 58, 0.12);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --mono: "JetBrains Mono", "Cascadia Mono", "IBM Plex Mono", "Fira Code", monospace;
+      --sans: "Aptos", "Segoe UI Variable", "Inter", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      min-height: 100%;
+      background:
+        radial-gradient(circle at top left, rgba(32, 87, 212, 0.18), transparent 34%),
+        radial-gradient(circle at 85% 18%, rgba(249, 115, 22, 0.16), transparent 20%),
+        linear-gradient(180deg, #faf6ef 0%, var(--bg) 46%, #f0e9db 100%);
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: var(--sans);
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+        repeating-linear-gradient(
+          90deg,
+          rgba(29, 36, 48, 0.02) 0,
+          rgba(29, 36, 48, 0.02) 1px,
+          transparent 1px,
+          transparent 28px
+        );
+    }
+
+    h1, h2, p { margin: 0; }
+    button, input, select { font: inherit; }
+    button { cursor: pointer; }
+    button:disabled { cursor: not-allowed; opacity: 0.62; }
+
+    .page-shell {
+      width: min(1420px, calc(100% - 32px));
+      margin: 24px auto 44px;
+      display: grid;
+      gap: 20px;
+    }
+
+    .masthead {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 220px;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(247, 241, 231, 0.94)),
+        linear-gradient(160deg, rgba(32, 87, 212, 0.1), rgba(249, 115, 22, 0.08));
+      box-shadow: var(--shadow);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(125deg, transparent 0 54%, rgba(32, 87, 212, 0.07) 54% 58%, transparent 58%),
+        linear-gradient(180deg, transparent, rgba(29, 36, 48, 0.02));
+      pointer-events: none;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 16px;
+      max-width: 860px;
+    }
+
+    .hero-kicker {
+      width: fit-content;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(32, 87, 212, 0.18);
+      background: rgba(32, 87, 212, 0.08);
+      color: var(--brand-strong);
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+    }
+
+    .hero p {
+      max-width: 72ch;
+      color: var(--text-soft);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .hero-notes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-note {
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--text-soft);
+      font-size: 12px;
+      line-height: 1;
+    }
+
+    .lang-switch {
+      height: 100%;
+      padding: 18px;
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--line);
+      background: rgba(255, 251, 245, 0.84);
+      box-shadow: var(--shadow);
+      display: grid;
+      align-content: start;
+      gap: 10px;
+    }
+
+    .lang-switch span {
+      font-size: 12px;
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+    }
+
+    .lang-switch select {
+      width: 100%;
+      min-height: 46px;
+      margin: 0;
+    }
+
+    .workspace {
+      display: grid;
+      grid-template-columns: 360px minmax(0, 1fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    .rail,
+    .content-stack {
+      display: grid;
+      gap: 20px;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .panel-inner {
+      padding: 22px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .panel h2 {
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brand);
+    }
+
+    .panel-heading {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .panel-heading p,
+    .subtle-note {
+      color: var(--text-soft);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .section-intro {
+      display: grid;
+      gap: 6px;
+    }
+
+    .form-grid,
+    .row {
+      display: grid;
+      gap: 14px;
+    }
+
+    .row {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    label {
+      display: block;
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text-soft);
+      letter-spacing: 0.03em;
+    }
+
+    input,
+    select {
+      width: 100%;
+      margin: 0;
+      min-height: 46px;
+      padding: 12px 14px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.82);
+      color: var(--text);
+      transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+    }
+
+    input:hover,
+    select:hover {
+      border-color: var(--line-strong);
+    }
+
+    input:focus,
+    select:focus,
+    button:focus-visible {
+      outline: none;
+      border-color: rgba(32, 87, 212, 0.65);
+      box-shadow: 0 0 0 4px rgba(32, 87, 212, 0.12);
+    }
+
+    .checkbox-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    .checkbox-row input {
+      width: 18px;
+      min-height: auto;
+      margin: 0;
+      padding: 0;
+      accent-color: var(--brand);
+    }
+
+    .primary-action,
+    .secondary-action,
+    .pill {
+      min-height: 46px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease, border-color 180ms ease;
+    }
+
+    .primary-action:hover,
+    .secondary-action:hover,
+    .pill:hover {
+      transform: translateY(-1px);
+    }
+
+    .primary-action {
+      background: linear-gradient(135deg, var(--brand), #2f78ff);
+      color: #fff;
+      box-shadow: 0 16px 28px rgba(32, 87, 212, 0.22);
+    }
+
+    .secondary-action,
+    .pill {
+      background: rgba(255, 255, 255, 0.72);
+      border-color: var(--line);
+      color: var(--text);
+    }
+
+    .pill {
+      min-height: 40px;
+      padding: 0 14px;
+      font-size: 13px;
+    }
+
+    .action-stack {
+      display: grid;
+      gap: 12px;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--line), transparent);
+    }
+
+    .hint {
+      color: var(--text-soft);
+      font-size: 12px;
+      line-height: 1.65;
+    }
+
+    .status {
+      min-height: 52px;
+      padding: 14px 16px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.76);
+      color: var(--text-soft);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .stage-shell {
+      display: grid;
+      gap: 16px;
+    }
+
+    .preview-empty {
+      display: grid;
+      place-items: center;
+      min-height: 280px;
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      border: 1px dashed var(--line-strong);
+      background:
+        linear-gradient(135deg, rgba(32, 87, 212, 0.06), rgba(249, 115, 22, 0.05)),
+        rgba(255, 255, 255, 0.44);
+      color: var(--text-soft);
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    .preview-tools {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .preview-card {
+      display: grid;
+      grid-template-columns: minmax(240px, 320px) minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    .preview-stage,
+    .result-stage {
+      display: grid;
+      gap: 12px;
+      align-content: start;
+    }
+
+    .stage-label {
+      width: fit-content;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--rare);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .ascii {
+      position: relative;
+      min-height: 240px;
+      padding: 20px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(29, 36, 48, 0.16);
+      background: linear-gradient(180deg, rgba(18, 24, 37, 0.98), rgba(25, 34, 47, 0.98));
+      color: #b9f08b;
+      font-family: var(--mono);
+      font-size: 15px;
+      line-height: 1.25;
+      white-space: pre;
+      overflow: auto;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    }
+
+    .ascii::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 36%),
+        repeating-linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.025) 0,
+          rgba(255, 255, 255, 0.025) 1px,
+          transparent 1px,
+          transparent 18px
+        );
+      pointer-events: none;
+    }
+
+    .ascii.shiny {
+      color: #fff5b3;
+      border-color: rgba(243, 212, 108, 0.36);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        0 0 0 1px rgba(243, 212, 108, 0.12),
+        0 16px 24px rgba(243, 212, 108, 0.12);
+    }
+
+    .ascii.shiny::after {
+      content: "shine";
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(255, 226, 122, 0.14);
+      color: #ffe27a;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .detail-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .meta-line {
+      min-height: 76px;
+      padding: 14px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--text-soft);
+      line-height: 1.5;
+      word-break: break-word;
+    }
+
+    .meta-line strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--text);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .stats {
+      display: grid;
+      gap: 10px;
+    }
+
+    .stat {
+      display: grid;
+      grid-template-columns: 112px minmax(0, 1fr) 40px;
+      gap: 10px;
+      align-items: center;
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    .stat > span:first-child,
+    .stat > span:last-child {
+      font-family: var(--mono);
+    }
+
+    .bar {
+      height: 12px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(29, 36, 48, 0.08);
+      border: 1px solid rgba(29, 36, 48, 0.08);
+    }
+
+    .bar > span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #3bc56f 0%, #ffd36f 100%);
+    }
+
+    .binary-box {
+      padding: 18px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(244, 237, 226, 0.8));
+      display: grid;
+      gap: 10px;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--text-soft);
+      word-break: break-word;
+    }
+
+    .binary-box strong {
+      color: var(--text);
+    }
+
+    .binary-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 2px;
+    }
+
+    .results {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .result-card {
+      display: grid;
+      gap: 14px;
+      padding: 18px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(246, 240, 231, 0.88));
+      min-height: 100%;
+    }
+
+    .result-card .ascii {
+      min-height: 150px;
+      padding: 16px;
+      font-size: 13px;
+    }
+
+    .result-summary {
+      display: grid;
+      gap: 8px;
+    }
+
+    .salt {
+      padding: 10px 12px;
+      border-radius: var(--radius-md);
+      background: var(--rare-soft);
+      color: var(--rare);
+      font-family: var(--mono);
+      font-size: 12px;
+      line-height: 1.6;
+      word-break: break-all;
+    }
+
+    .result-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--text-soft);
+      font-size: 11px;
+      font-family: var(--mono);
+      letter-spacing: 0.04em;
+    }
+
+    .result-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    .loading {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .loading::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+      animation: sweep 900ms linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes sweep {
+      from { transform: translateX(-100%); }
+      to { transform: translateX(100%); }
+    }
+
+    @media (max-width: 1100px) {
+      .masthead,
+      .workspace,
+      .preview-card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .page-shell {
+        width: min(100% - 18px, 100%);
+        margin: 10px auto 28px;
+        gap: 14px;
+      }
+
+      .hero,
+      .lang-switch,
+      .panel {
+        border-radius: 22px;
+      }
+
+      .hero,
+      .panel-inner {
+        padding: 18px;
+      }
+
+      .row,
+      .meta-grid,
+      .result-actions {
+        grid-template-columns: 1fr;
+      }
+
+      .preview-tools {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .results {
+        grid-template-columns: 1fr;
+      }
+
+      .ascii {
+        min-height: 210px;
+        font-size: 14px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <div class="masthead">
+      <div class="hero">
+        <div class="hero-copy">
+          <div class="hero-kicker" id="heroKicker">Local Buddy Lab</div>
+          <h1 id="heroTitle">Claude Buddy Changer</h1>
+          <p id="heroDesc">Use the form on the left to preview your current buddy or search for salts that generate a buddy you prefer. Then click any result to preview it visually.</p>
+          <div class="hero-notes">
+            <span class="hero-note" id="heroNoteOne">Real local user ID detection</span>
+            <span class="hero-note" id="heroNoteTwo">ASCII sprite preview with motion</span>
+            <span class="hero-note" id="heroNoteThree">Apply and restore binary salt safely</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="topbar">
+        <div class="lang-switch">
+          <span id="langLabel">Language</span>
+          <select id="langSelect" aria-label="Language selector">
+            <option value="en">English</option>
+            <option value="zh">中文</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <main class="workspace">
+      <aside class="rail">
+        <section class="panel">
+          <div class="panel-inner">
+            <div class="panel-heading">
+              <div class="section-intro">
+                <h2 id="controlsTitle">Controls</h2>
+                <p id="controlsDesc">Tune the preview, filter the buddy search, then apply the exact salt you want.</p>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="userId" id="userIdLabel">User ID</label>
+                <input id="userId" placeholder="Auto-detected from local Claude config" autocomplete="off">
+              </div>
+
+              <div class="field">
+                <label for="salt" id="saltLabel">Salt for preview</label>
+                <input id="salt" placeholder="friend-2026-401" autocomplete="off">
+              </div>
+            </div>
+
+            <div class="action-stack">
+              <button id="previewBtn" class="primary-action" type="button">Preview Buddy</button>
+              <div class="hint" id="userHint">If you leave User ID blank, the page will use the one found in your local Claude config.</div>
+            </div>
+
+            <div class="divider" aria-hidden="true"></div>
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="species" id="speciesLabel">Species</label>
+                <select id="species"></select>
+              </div>
+
+              <div class="row">
+                <div class="field">
+                  <label for="rarity" id="rarityLabel">Rarity</label>
+                  <select id="rarity"></select>
+                </div>
+                <div class="field">
+                  <label for="eye" id="eyeLabel">Eye</label>
+                  <select id="eye"></select>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="field">
+                  <label for="hat" id="hatLabel">Hat</label>
+                  <select id="hat"></select>
+                </div>
+                <div class="field">
+                  <label for="total" id="attemptsLabel">Search attempts</label>
+                  <input id="total" type="number" value="500000" inputmode="numeric">
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="field">
+                  <label for="minStat" id="minStatLabel">Min stat</label>
+                  <input id="minStat" placeholder="CHAOS:80" autocomplete="off">
+                </div>
+                <div class="field">
+                  <label for="prefix" id="prefixLabel">Salt prefix</label>
+                  <input id="prefix" value="lab-" autocomplete="off">
+                </div>
+              </div>
+            </div>
+
+            <label class="checkbox-row">
+              <input id="shiny" type="checkbox">
+              <span id="shinyLabel">Shiny only</span>
+            </label>
+
+            <div class="action-stack">
+              <button id="searchBtn" class="primary-action" type="button">Search Matching Buddies</button>
+            </div>
+
+            <div id="binaryStatus"></div>
+          </div>
+        </section>
+      </aside>
+
+      <section class="content-stack">
+        <section class="panel">
+          <div class="panel-inner">
+            <div class="panel-heading">
+              <div class="section-intro">
+                <h2 id="previewTitle">Preview</h2>
+                <p id="previewDesc">Rendered from your actual user ID and salt combination, with live idle and blink frames.</p>
+              </div>
+            </div>
+            <div class="status" id="previewStatus">Loading local Claude metadata...</div>
+            <div class="stage-shell">
+              <div id="previewContainer" class="preview-empty">Preview a buddy to see the live ASCII stage, metadata, and stat spread.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-inner">
+            <div class="panel-heading">
+              <div class="section-intro">
+                <h2 id="resultsTitle">Search Results</h2>
+                <p id="resultsDesc">Every result keeps the same payload shape as the preview endpoint, so any card can be promoted instantly.</p>
+              </div>
+            </div>
+            <div class="status" id="searchStatus">No search yet.</div>
+            <div class="results" id="results"></div>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+  <script>
+    const i18n = {
+      en: {
+        langLabel: "Language",
+        heroKicker: "Local Buddy Lab",
+        heroTitle: "Claude Buddy Changer",
+        heroDesc: "Use the form on the left to preview your current buddy or search for salts that generate a buddy you prefer. Then click any result to preview it visually.",
+        heroNoteOne: "Real local user ID detection",
+        heroNoteTwo: "ASCII sprite preview with motion",
+        heroNoteThree: "Apply and restore binary salt safely",
+        controlsTitle: "Controls",
+        controlsDesc: "Tune the preview, filter the buddy search, then apply the exact salt you want.",
+        userIdLabel: "User ID",
+        userIdPlaceholder: "Auto-detected from local Claude config",
+        saltLabel: "Salt for preview",
+        saltPlaceholder: "friend-2026-401",
+        previewBtn: "Preview Buddy",
+        userHint: "If you leave User ID blank, the page will use the one found in your local Claude config.",
+        speciesLabel: "Species",
+        rarityLabel: "Rarity",
+        eyeLabel: "Eye",
+        hatLabel: "Hat",
+        attemptsLabel: "Search attempts",
+        minStatLabel: "Min stat",
+        minStatPlaceholder: "CHAOS:80",
+        prefixLabel: "Salt prefix",
+        shinyLabel: "Shiny only",
+        searchBtn: "Search Matching Buddies",
+        binaryTitle: "Claude Binary",
+        binaryMissing: "Claude binary not detected on this machine.",
+        binaryPath: "Path",
+        binarySalt: "Current salt",
+        binaryOriginal: "Recorded original salt",
+        binaryRestore: "Restore Original",
+        binaryRefresh: "Refresh Binary Status",
+        useThisBuddy: "Use This Buddy",
+        applySuccess: "Buddy applied. Restart Claude Code to see the change.",
+        restoreSuccess: "Original salt restored.",
+        previewTitle: "Preview",
+        previewDesc: "Rendered from your actual user ID and salt combination, with live idle and blink frames.",
+        resultsTitle: "Search Results",
+        resultsDesc: "Every result keeps the same payload shape as the preview endpoint, so any card can be promoted instantly.",
+        loadingMeta: "Loading local Claude metadata...",
+        loadedMeta: "Loaded your local Claude user ID. Click Preview Buddy to see the current result.",
+        detectError: "Could not auto-detect user ID:",
+        previewing: "Generating preview...",
+        previewUpdated: "Preview updated.",
+        animationOn: "Animation on",
+        animationOff: "Animation off",
+        blinkOn: "Blink on",
+        blinkOff: "Blink off",
+        searching: "Searching...",
+        noSearchYet: "No search yet.",
+        noMatches: "No matches found. Increase search attempts or relax the filters.",
+        foundMatches: (count, searched) => `Found ${count} matches in ${searched} attempts. Click Preview on any card.`,
+        any: "Any",
+        shinyYes: "yes",
+        shinyNo: "no",
+        resultShiny: "shiny",
+        resultEyeHat: (eye, hat) => `eye ${eye} / hat ${hat}`,
+        resultTopStat: (name, value) => `top stat ${name} ${value}`,
+        previewThis: "Preview This",
+        userIdMeta: "User ID",
+        saltMeta: "Salt",
+        speciesMeta: "Species",
+        rarityMeta: "Rarity",
+        eyeMeta: "Eye",
+        hatMeta: "Hat",
+        shinyMeta: "Shiny",
+        stageLabel: "Live ASCII Render",
+        searchStageLabel: "Candidate",
+        statsTitle: "Stat Spread",
+        noPreviewYet: "Preview a buddy to see the live ASCII stage, metadata, and stat spread.",
+        refreshing: "Refreshing binary status...",
+        applying: "Applying buddy to Claude binary...",
+        restoring: "Restoring original salt...",
+      },
+      zh: {
+        langLabel: "语言",
+        heroKicker: "本地 Buddy 实验台",
+        heroTitle: "Claude Buddy Changer",
+        heroDesc: "左侧可以先预览当前宠物，也可以按条件搜索更喜欢的 salt。找到结果后，点击卡片上的按钮即可在上方直接预览。",
+        heroNoteOne: "本地真实 user ID 检测",
+        heroNoteTwo: "带动画的 ASCII sprite 预览",
+        heroNoteThree: "安全应用与恢复 binary salt",
+        controlsTitle: "控制面板",
+        controlsDesc: "先调整预览参数，再筛选搜索结果，最后把确定的 salt 应用到本地 Claude Code。",
+        userIdLabel: "用户 ID",
+        userIdPlaceholder: "自动从本地 Claude 配置读取",
+        saltLabel: "预览用 Salt",
+        saltPlaceholder: "friend-2026-401",
+        previewBtn: "预览宠物",
+        userHint: "如果留空，页面会自动使用你本地 Claude 配置里的 user ID。",
+        speciesLabel: "物种",
+        rarityLabel: "稀有度",
+        eyeLabel: "眼睛",
+        hatLabel: "帽子",
+        attemptsLabel: "搜索次数",
+        minStatLabel: "最低属性",
+        minStatPlaceholder: "CHAOS:80",
+        prefixLabel: "Salt 前缀",
+        shinyLabel: "只看 Shiny",
+        searchBtn: "搜索符合条件的宠物",
+        binaryTitle: "Claude 二进制",
+        binaryMissing: "当前机器未检测到 Claude 可执行文件。",
+        binaryPath: "路径",
+        binarySalt: "当前 Salt",
+        binaryOriginal: "已记录的原始 Salt",
+        binaryRestore: "恢复原始 Salt",
+        binaryRefresh: "刷新二进制状态",
+        useThisBuddy: "使用这只宠物",
+        applySuccess: "已应用该 Buddy。重启 Claude Code 后生效。",
+        restoreSuccess: "已恢复原始 Salt。",
+        previewTitle: "预览",
+        previewDesc: "这里展示真实 user ID 与 salt 组合下的 ASCII 形态，并支持 idle 与 blink 预览。",
+        resultsTitle: "搜索结果",
+        resultsDesc: "每张结果卡都保留与预览接口一致的数据结构，可以直接提升为当前选择。",
+        loadingMeta: "正在加载本地 Claude 信息...",
+        loadedMeta: "已读取到你本地的 Claude user ID。点击“预览宠物”即可查看当前结果。",
+        detectError: "无法自动读取 user ID：",
+        previewing: "正在生成预览...",
+        previewUpdated: "预览已更新。",
+        animationOn: "动画已开",
+        animationOff: "动画已关",
+        blinkOn: "眨眼已开",
+        blinkOff: "眨眼已关",
+        searching: "搜索中...",
+        noSearchYet: "还没有搜索。",
+        noMatches: "没有找到结果。请增加搜索次数或放宽筛选条件。",
+        foundMatches: (count, searched) => `已在 ${searched} 次尝试中找到 ${count} 个结果。点击卡片按钮即可预览。`,
+        any: "不限",
+        shinyYes: "是",
+        shinyNo: "否",
+        resultShiny: "闪光",
+        resultEyeHat: (eye, hat) => `眼睛 ${eye} / 帽子 ${hat}`,
+        resultTopStat: (name, value) => `最高属性 ${name} ${value}`,
+        previewThis: "预览这只",
+        userIdMeta: "用户 ID",
+        saltMeta: "Salt",
+        speciesMeta: "物种",
+        rarityMeta: "稀有度",
+        eyeMeta: "眼睛",
+        hatMeta: "帽子",
+        shinyMeta: "Shiny",
+        stageLabel: "实时 ASCII 渲染",
+        searchStageLabel: "候选结果",
+        statsTitle: "属性分布",
+        noPreviewYet: "先预览一只宠物，这里会显示 ASCII 舞台、元信息和属性分布。",
+        refreshing: "正在刷新二进制状态...",
+        applying: "正在把 Buddy 应用到 Claude 二进制...",
+        restoring: "正在恢复原始 Salt...",
+      },
+    };
+
+    const optionLabels = {
+      zh: {
+        common: "普通",
+        uncommon: "少见",
+        rare: "稀有",
+        epic: "史诗",
+        legendary: "传说",
+        duck: "鸭子",
+        goose: "鹅",
+        blob: "团子",
+        cat: "猫",
+        dragon: "龙",
+        octopus: "章鱼",
+        owl: "猫头鹰",
+        penguin: "企鹅",
+        turtle: "乌龟",
+        snail: "蜗牛",
+        ghost: "幽灵",
+        axolotl: "美西螈",
+        capybara: "水豚",
+        cactus: "仙人掌",
+        robot: "机器人",
+        rabbit: "兔子",
+        mushroom: "蘑菇",
+        chonk: "胖墩",
+        none: "无",
+        crown: "王冠",
+        tophat: "高礼帽",
+        propeller: "螺旋桨帽",
+        halo: "光环",
+        wizard: "巫师帽",
+        beanie: "毛线帽",
+        tinyduck: "小黄鸭",
+        DEBUGGING: "调试",
+        PATIENCE: "耐心",
+        CHAOS: "混乱",
+        WISDOM: "智慧",
+        SNARK: "吐槽",
+      },
+    };
+
+    const previewStatus = document.getElementById("previewStatus");
+    const searchStatus = document.getElementById("searchStatus");
+    const previewContainer = document.getElementById("previewContainer");
+    const resultsContainer = document.getElementById("results");
+    const langSelect = document.getElementById("langSelect");
+    const previewBtn = document.getElementById("previewBtn");
+    const searchBtn = document.getElementById("searchBtn");
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let currentLang = "en";
+    let lastMeta = null;
+    let lastSearchFilters = null;
+    let animationEnabled = !prefersReducedMotion;
+    let blinkEnabled = !prefersReducedMotion;
+    let previewAnimationTimer = null;
+    let previewBlinkTimer = null;
+    let currentPreviewPayload = null;
+    let currentBinary = null;
+
+    function t(key) {
+      return i18n[currentLang][key];
+    }
+
+    function setButtonBusy(button, busy) {
+      if (!button) return;
+      button.disabled = busy;
+      button.classList.toggle("loading", busy);
+    }
+
+    function optionText(value) {
+      return optionLabels[currentLang]?.[value] || value;
+    }
+
+    function optionFill(select, values, includeAny = true, selectedValue = "") {
+      select.innerHTML = "";
+      if (includeAny) {
+        const any = document.createElement("option");
+        any.value = "";
+        any.textContent = t("any");
+        select.appendChild(any);
+      }
+      for (const value of values) {
+        const option = document.createElement("option");
+        option.value = value;
+        option.textContent = optionText(value);
+        option.selected = value === selectedValue;
+        select.appendChild(option);
+      }
+      if (includeAny && !selectedValue) {
+        select.value = "";
+      }
+    }
+
+    function getTopStat(stats) {
+      return Object.entries(stats).sort((a, b) => b[1] - a[1])[0];
+    }
+
+    function renderBuddyCard(payload) {
+      const buddy = payload.buddy;
+      const [topStatName, topStatValue] = getTopStat(buddy.stats);
+      const statsHtml = Object.entries(buddy.stats).map(([name, value]) => `
+        <div class="stat">
+          <span>${optionText(name)}</span>
+          <div class="bar"><span style="width:${value}%"></span></div>
+          <span>${value}</span>
+        </div>
+      `).join("");
+
+      return `
+        <div class="preview-tools">
+          <button type="button" id="toggleAnimationBtn" class="pill">${animationEnabled ? t("animationOn") : t("animationOff")}</button>
+          <button type="button" id="toggleBlinkBtn" class="pill">${blinkEnabled ? t("blinkOn") : t("blinkOff")}</button>
+          <button type="button" id="applyPreviewBtn" class="primary-action">${t("useThisBuddy")}</button>
+        </div>
+        <div class="preview-card">
+          <div class="preview-stage">
+            <div class="stage-label">${t("stageLabel")}</div>
+            <div class="ascii ${buddy.shiny ? "shiny" : ""}" id="previewAscii">${(payload.sprite || [payload.face || buddy.species]).join("\n")}</div>
+          </div>
+          <div class="detail-stack">
+            <div class="meta-grid">
+              <div class="meta-line"><strong>${t("userIdMeta")}</strong>${payload.userId}</div>
+              <div class="meta-line"><strong>${t("saltMeta")}</strong>${payload.salt}</div>
+              <div class="meta-line"><strong>${t("speciesMeta")}</strong>${optionText(buddy.species)}</div>
+              <div class="meta-line"><strong>${t("rarityMeta")}</strong>${optionText(buddy.rarity)}</div>
+              <div class="meta-line"><strong>${t("eyeMeta")}</strong>${buddy.eye}</div>
+              <div class="meta-line"><strong>${t("hatMeta")}</strong>${optionText(buddy.hat)}</div>
+              <div class="meta-line"><strong>${t("shinyMeta")}</strong>${buddy.shiny ? t("shinyYes") : t("shinyNo")}</div>
+              <div class="meta-line"><strong>${t("statsTitle")}</strong>${t("resultTopStat")(optionText(topStatName), topStatValue)}</div>
+            </div>
+            <div class="meta-line">
+              <strong>${t("statsTitle")}</strong>
+              <div class="stats">${statsHtml}</div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function setPreviewAscii(lines, shiny) {
+      const el = document.getElementById("previewAscii");
+      if (!el) return;
+      el.textContent = lines.join("\n");
+      el.classList.toggle("shiny", !!shiny);
+    }
+
+    function stopPreviewAnimation() {
+      if (previewAnimationTimer) {
+        clearInterval(previewAnimationTimer);
+        previewAnimationTimer = null;
+      }
+      if (previewBlinkTimer) {
+        clearTimeout(previewBlinkTimer);
+        previewBlinkTimer = null;
+      }
+    }
+
+    function scheduleBlink(payload) {
+      if (!blinkEnabled || prefersReducedMotion || !payload?.blinkFrame) return;
+      const nextDelay = 2200 + Math.floor(Math.random() * 2800);
+      previewBlinkTimer = setTimeout(() => {
+        setPreviewAscii(payload.blinkFrame, payload.buddy.shiny);
+        setTimeout(() => {
+          const frame = payload.spriteFrames?.[0] || payload.sprite || [payload.face || payload.buddy.species];
+          setPreviewAscii(frame, payload.buddy.shiny);
+          scheduleBlink(payload);
+        }, 160);
+      }, nextDelay);
+    }
+
+    function startPreviewAnimation(payload) {
+      stopPreviewAnimation();
+      if (!payload) return;
+      const baseFrame = payload.spriteFrames?.[0] || payload.sprite || [payload.face || payload.buddy.species];
+      setPreviewAscii(baseFrame, payload.buddy.shiny);
+
+      if (animationEnabled && !prefersReducedMotion && payload.spriteFrames?.length > 1) {
+        let index = 0;
+        previewAnimationTimer = setInterval(() => {
+          index = (index + 1) % payload.spriteFrames.length;
+          setPreviewAscii(payload.spriteFrames[index], payload.buddy.shiny);
+        }, 500);
+      }
+
+      scheduleBlink(payload);
+    }
+
+    function parseMinStatClient(value) {
+      if (!value) return null;
+      const [rawName, rawThreshold] = value.split(":");
+      const name = String(rawName || "").trim().toUpperCase();
+      const threshold = Number(rawThreshold);
+      if (!name || !Number.isFinite(threshold)) return null;
+      return { name, threshold };
+    }
+
+    function matchFiltersClient(match, filters) {
+      const buddy = match.buddy;
+      if (filters.species && buddy.species !== filters.species) return false;
+      if (filters.rarity && buddy.rarity !== filters.rarity) return false;
+      if (filters.eye && buddy.eye !== filters.eye) return false;
+      if (filters.hat && buddy.hat !== filters.hat) return false;
+      if (filters.shiny && !buddy.shiny) return false;
+      if (filters.minStat && buddy.stats[filters.minStat.name] < filters.minStat.threshold) return false;
+      return true;
+    }
+
+    async function fetchJson(url, options = {}) {
+      const response = await fetch(url, {
+        headers: { "Content-Type": "application/json" },
+        ...options,
+      });
+      const data = await response.json();
+      if (!response.ok) {
+        throw new Error(data.error || "Request failed");
+      }
+      return data;
+    }
+
+    function renderBinaryStatus() {
+      const container = document.getElementById("binaryStatus");
+      if (!container) return;
+
+      if (!currentBinary) {
+        container.innerHTML = `
+          <div class="binary-box">
+            <div><strong>${t("binaryTitle")}</strong></div>
+            <div>${t("binaryMissing")}</div>
+            <div class="binary-actions">
+              <button type="button" id="refreshBinaryBtn" class="secondary-action">${t("binaryRefresh")}</button>
+            </div>
+          </div>
+        `;
+      } else {
+        container.innerHTML = `
+          <div class="binary-box">
+            <div><strong>${t("binaryTitle")}</strong></div>
+            <div><strong>${t("binaryPath")}:</strong> ${currentBinary.path}</div>
+            <div><strong>${t("binarySalt")}:</strong> ${currentBinary.currentSalt}</div>
+            <div><strong>${t("binaryOriginal")}:</strong> ${currentBinary.originalSaltRecorded || "-"}</div>
+            <div class="binary-actions">
+              <button type="button" id="refreshBinaryBtn" class="secondary-action">${t("binaryRefresh")}</button>
+              <button type="button" id="restoreBinaryBtn" class="secondary-action">${t("binaryRestore")}</button>
+            </div>
+          </div>
+        `;
+      }
+
+      const refreshButton = document.getElementById("refreshBinaryBtn");
+      refreshButton.addEventListener("click", async () => {
+        try {
+          setButtonBusy(refreshButton, true);
+          previewStatus.textContent = t("refreshing");
+          await loadBinaryStatus();
+          previewStatus.textContent = currentPreviewPayload
+            ? t("previewUpdated")
+            : (lastMeta?.detectedUserId ? t("loadedMeta") : `${t("detectError")} ${lastMeta?.detectionError || ""}`);
+        } catch (error) {
+          previewStatus.textContent = error.message;
+        } finally {
+          setButtonBusy(refreshButton, false);
+        }
+      });
+
+      const restoreButton = document.getElementById("restoreBinaryBtn");
+      if (restoreButton) {
+        restoreButton.addEventListener("click", async () => {
+          try {
+            setButtonBusy(restoreButton, true);
+            previewStatus.textContent = t("restoring");
+            const data = await fetchJson("/api/restore", {
+              method: "POST",
+              body: JSON.stringify({}),
+            });
+            previewStatus.textContent = `${t("restoreSuccess")} ${data.restoredSalt}`;
+            await loadBinaryStatus();
+          } catch (error) {
+            previewStatus.textContent = error.message;
+          } finally {
+            setButtonBusy(restoreButton, false);
+          }
+        });
+      }
+    }
+
+    async function loadBinaryStatus() {
+      const data = await fetchJson("/api/binary");
+      currentBinary = data.binary;
+      renderBinaryStatus();
+    }
+
+    async function loadMeta() {
+      const meta = await fetchJson("/api/meta");
+      lastMeta = meta;
+      optionFill(document.getElementById("species"), meta.species);
+      optionFill(document.getElementById("rarity"), meta.rarities);
+      optionFill(document.getElementById("eye"), meta.eyes);
+      optionFill(document.getElementById("hat"), meta.hats);
+      document.getElementById("userId").value = meta.detectedUserId || "";
+      document.getElementById("salt").value = meta.defaultSalt;
+      previewStatus.textContent = meta.detectedUserId
+        ? t("loadedMeta")
+        : `${t("detectError")} ${meta.detectionError}`;
+      currentBinary = meta.binary;
+      renderBinaryStatus();
+    }
+
+    async function previewSalt(salt) {
+      previewStatus.textContent = t("previewing");
+      setButtonBusy(previewBtn, true);
+      const payload = {
+        userId: document.getElementById("userId").value.trim(),
+        salt,
+      };
+
+      try {
+        const data = await fetchJson("/api/preview", {
+          method: "POST",
+          body: JSON.stringify(payload),
+        });
+        currentPreviewPayload = data;
+        previewContainer.classList.remove("preview-empty");
+        previewContainer.innerHTML = renderBuddyCard(data);
+
+        document.getElementById("toggleAnimationBtn").addEventListener("click", () => {
+          animationEnabled = !animationEnabled;
+          document.getElementById("toggleAnimationBtn").textContent = animationEnabled ? t("animationOn") : t("animationOff");
+          startPreviewAnimation(currentPreviewPayload);
+        });
+
+        document.getElementById("toggleBlinkBtn").addEventListener("click", () => {
+          blinkEnabled = !blinkEnabled;
+          document.getElementById("toggleBlinkBtn").textContent = blinkEnabled ? t("blinkOn") : t("blinkOff");
+          startPreviewAnimation(currentPreviewPayload);
+        });
+
+        document.getElementById("applyPreviewBtn").addEventListener("click", async () => {
+          const applyButton = document.getElementById("applyPreviewBtn");
+          try {
+            setButtonBusy(applyButton, true);
+            previewStatus.textContent = t("applying");
+            const result = await fetchJson("/api/apply", {
+              method: "POST",
+              body: JSON.stringify({ salt: currentPreviewPayload.salt }),
+            });
+            previewStatus.textContent = `${t("applySuccess")} ${result.oldSalt} -> ${result.newSalt}`;
+            await loadBinaryStatus();
+          } catch (error) {
+            previewStatus.textContent = error.message;
+          } finally {
+            setButtonBusy(applyButton, false);
+          }
+        });
+
+        startPreviewAnimation(data);
+        previewStatus.textContent = t("previewUpdated");
+        document.getElementById("salt").value = salt;
+      } finally {
+        setButtonBusy(previewBtn, false);
+      }
+    }
+
+    async function search() {
+      searchStatus.textContent = t("searching");
+      setButtonBusy(searchBtn, true);
+      resultsContainer.innerHTML = "";
+      lastSearchFilters = {
+        species: document.getElementById("species").value,
+        rarity: document.getElementById("rarity").value,
+        eye: document.getElementById("eye").value,
+        hat: document.getElementById("hat").value,
+        shiny: document.getElementById("shiny").checked,
+        minStat: parseMinStatClient(document.getElementById("minStat").value.trim()),
+      };
+
+      const payload = {
+        userId: document.getElementById("userId").value.trim(),
+        species: lastSearchFilters.species,
+        rarity: lastSearchFilters.rarity,
+        eye: lastSearchFilters.eye,
+        hat: lastSearchFilters.hat,
+        shiny: lastSearchFilters.shiny,
+        minStat: document.getElementById("minStat").value.trim(),
+        total: Number(document.getElementById("total").value || 500000),
+        prefix: document.getElementById("prefix").value.trim() || "lab-",
+      };
+
+      try {
+        const data = await fetchJson("/api/search", {
+          method: "POST",
+          body: JSON.stringify(payload),
+        });
+        const filteredMatches = data.matches.filter(match => matchFiltersClient(match, lastSearchFilters));
+
+        if (!filteredMatches.length) {
+          searchStatus.textContent = t("noMatches");
+          return;
+        }
+
+        searchStatus.textContent = t("foundMatches")(filteredMatches.length, data.searched);
+        resultsContainer.innerHTML = filteredMatches.map(match => {
+          const [topStatName, topStatValue] = getTopStat(match.buddy.stats);
+          return `
+            <div class="result-card">
+              <div class="result-stage">
+                <div class="stage-label">${t("searchStageLabel")}</div>
+                <div class="ascii ${match.buddy.shiny ? "shiny" : ""}">${(match.sprite || [match.face || match.buddy.species]).join("\n")}</div>
+              </div>
+              <div class="result-summary">
+                <div class="salt">${match.salt}</div>
+                <div class="result-tags">
+                  <span class="tag">${optionText(match.buddy.rarity)}</span>
+                  <span class="tag">${match.buddy.shiny ? `${t("resultShiny")} ` : ""}${optionText(match.buddy.species)}</span>
+                </div>
+                <div class="subtle-note">${t("resultEyeHat")(match.buddy.eye, optionText(match.buddy.hat))}</div>
+                <div class="subtle-note">${t("resultTopStat")(optionText(topStatName), topStatValue)}</div>
+              </div>
+              <div class="result-actions">
+                <button type="button" class="secondary-action" data-salt="${match.salt}">${t("previewThis")}</button>
+                <button type="button" class="primary-action" data-apply-salt="${match.salt}">${t("useThisBuddy")}</button>
+              </div>
+            </div>
+          `;
+        }).join("");
+
+        for (const button of resultsContainer.querySelectorAll("button[data-salt]")) {
+          button.addEventListener("click", () => previewSalt(button.dataset.salt));
+        }
+
+        for (const button of resultsContainer.querySelectorAll("button[data-apply-salt]")) {
+          button.addEventListener("click", async () => {
+            try {
+              setButtonBusy(button, true);
+              searchStatus.textContent = t("applying");
+              const result = await fetchJson("/api/apply", {
+                method: "POST",
+                body: JSON.stringify({ salt: button.dataset.applySalt }),
+              });
+              searchStatus.textContent = `${t("applySuccess")} ${result.oldSalt} -> ${result.newSalt}`;
+              await loadBinaryStatus();
+            } catch (error) {
+              searchStatus.textContent = error.message;
+            } finally {
+              setButtonBusy(button, false);
+            }
+          });
+        }
+      } finally {
+        setButtonBusy(searchBtn, false);
+      }
+    }
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang === "zh" ? "zh-CN" : "en";
+      document.getElementById("langLabel").textContent = t("langLabel");
+      document.getElementById("heroKicker").textContent = t("heroKicker");
+      document.getElementById("heroTitle").textContent = t("heroTitle");
+      document.getElementById("heroDesc").textContent = t("heroDesc");
+      document.getElementById("heroNoteOne").textContent = t("heroNoteOne");
+      document.getElementById("heroNoteTwo").textContent = t("heroNoteTwo");
+      document.getElementById("heroNoteThree").textContent = t("heroNoteThree");
+      document.getElementById("controlsTitle").textContent = t("controlsTitle");
+      document.getElementById("controlsDesc").textContent = t("controlsDesc");
+      document.getElementById("userIdLabel").textContent = t("userIdLabel");
+      document.getElementById("saltLabel").textContent = t("saltLabel");
+      document.getElementById("previewBtn").textContent = t("previewBtn");
+      document.getElementById("userHint").textContent = t("userHint");
+      document.getElementById("speciesLabel").textContent = t("speciesLabel");
+      document.getElementById("rarityLabel").textContent = t("rarityLabel");
+      document.getElementById("eyeLabel").textContent = t("eyeLabel");
+      document.getElementById("hatLabel").textContent = t("hatLabel");
+      document.getElementById("attemptsLabel").textContent = t("attemptsLabel");
+      document.getElementById("minStatLabel").textContent = t("minStatLabel");
+      document.getElementById("prefixLabel").textContent = t("prefixLabel");
+      document.getElementById("shinyLabel").textContent = t("shinyLabel");
+      document.getElementById("searchBtn").textContent = t("searchBtn");
+      document.getElementById("previewTitle").textContent = t("previewTitle");
+      document.getElementById("previewDesc").textContent = t("previewDesc");
+      document.getElementById("resultsTitle").textContent = t("resultsTitle");
+      document.getElementById("resultsDesc").textContent = t("resultsDesc");
+      document.getElementById("userId").placeholder = t("userIdPlaceholder");
+      document.getElementById("salt").placeholder = t("saltPlaceholder");
+      document.getElementById("minStat").placeholder = t("minStatPlaceholder");
+      optionFill(document.getElementById("species"), lastMeta?.species || [], true, document.getElementById("species").value);
+      optionFill(document.getElementById("rarity"), lastMeta?.rarities || [], true, document.getElementById("rarity").value);
+      optionFill(document.getElementById("eye"), lastMeta?.eyes || [], true, document.getElementById("eye").value);
+      optionFill(document.getElementById("hat"), lastMeta?.hats || [], true, document.getElementById("hat").value);
+
+      if (!currentPreviewPayload) {
+        previewContainer.textContent = t("noPreviewYet");
+        previewStatus.textContent = lastMeta
+          ? (lastMeta.detectedUserId ? t("loadedMeta") : `${t("detectError")} ${lastMeta.detectionError}`)
+          : t("loadingMeta");
+      }
+
+      if (!resultsContainer.innerHTML) {
+        searchStatus.textContent = t("noSearchYet");
+      }
+
+      renderBinaryStatus();
+    }
+
+    previewBtn.addEventListener("click", async () => {
+      try {
+        await previewSalt(document.getElementById("salt").value.trim());
+      } catch (error) {
+        previewStatus.textContent = error.message;
+      }
+    });
+
+    searchBtn.addEventListener("click", async () => {
+      try {
+        await search();
+      } catch (error) {
+        searchStatus.textContent = error.message;
+      }
+    });
+
+    langSelect.addEventListener("change", event => {
+      setLanguage(event.target.value);
+      if (currentPreviewPayload && document.getElementById("salt").value.trim()) {
+        previewSalt(document.getElementById("salt").value.trim()).catch(error => {
+          previewStatus.textContent = error.message;
+        });
+      }
+      if (resultsContainer.innerHTML && lastSearchFilters) {
+        search().catch(error => {
+          searchStatus.textContent = error.message;
+        });
+      }
+    });
+
+    setLanguage(currentLang);
+    loadMeta().catch(error => {
+      previewStatus.textContent = error.message;
+    });
+  </script>
+</body>
+</html>
